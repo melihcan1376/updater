@@ -43,7 +43,7 @@ while True:
 
     except KeyboardInterrupt:
         os.system("clear")
-        print("Exitting Program")
+        print("Bye")
         sys.exit(3)
 
     if user == '1':
@@ -68,7 +68,6 @@ while True:
             os.system("clear")
 
         except KeyboardInterrupt:
-            print("Exitting Program")
             os.system("clear")
 
     elif user == '4':
@@ -81,7 +80,6 @@ while True:
             os.system("clear")
 
         except KeyboardInterrupt:
-            print("Exitting Program")
             os.system("clear")
 
     elif user == '5':
@@ -117,5 +115,5 @@ while True:
     else:
         print(Fore.LIGHTRED_EX)
         print("Error! Your Select Operation Not Found...")
-        input()
+        input("Enter the return program")
         os.system("clear")
