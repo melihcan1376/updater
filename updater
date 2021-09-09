@@ -6,49 +6,40 @@
 # Version 1.0
 
 from colorama import Fore
-from datetime import datetime
 import os
 import sys
 import pyfiglet
-import time
 
-colorama.init()
 
 banner = pyfiglet.figlet_format("Updater")
 options = '''
-  #---------------[_][o][x]
-  # 1. Package Update     #
-  #-----------------------#
-  # 2. Package Upgrade    #
-  #-----------------------#
-  # 3. Package Install    #
-  #-----------------------#
-  # 4. Package Uninstall  #
-  #-----------------------#
-  # 5. Package Autoremove #
-  #-----------------------#
-  # 6. Package Fix        #
-  #-----------------------#
-  # 7. About              #
-  #-----------------------#
-  # 8. Exit               #
-  #------Updater----------#
+  #---------------------[_][o][x]
+  # 1. Package Update           #
+  #-----------------------------#
+  # 2. Package Upgrade          #
+  #-----------------------------#
+  # 3. Package Install          #
+  #-----------------------------#
+  # 4. Package Uninstall        #
+  #-----------------------------#
+  # 5. Package Autoremove       #
+  #-----------------------------#
+  # 6. Package Fix              #
+  #-----------------------------#
+  # 7. About                    #
+  #-----------------------------#
+  # 8. Exit                     #
+  #-----------------------------#
 '''
 
 while True:
-    print(Fore.LIGHTBLUE_EX)
+    print(Fore.BLUE, end="")
     print(banner)
-    print("-"*30)
-    print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
-    print("-"*30)
-    print(Fore.LIGHTWHITE_EX)
-    print("Updater is a easy Linux apt downloader...")
-    print(Fore.LIGHTGREEN_EX)
+    print(Fore.LIGHTGREEN_EX,end="")
     print(options)
-    print(Fore.LIGHTWHITE_EX)
-
+    print(Fore.LIGHTWHITE_EX,end="")
     try:
-        user = input("Select the operation: ")
+        user = input("Select Options: ")
 
     except KeyboardInterrupt:
         os.system("clear")
@@ -56,13 +47,13 @@ while True:
         sys.exit(3)
 
     if user == '1':
-        os.system("sudo apt-get update")
+        os.system("sudo apt-get update -y")
         print(Fore.LIGHTGREEN_EX)
         input("Operation Complete...")
         os.system("clear")
 
     elif user == '2':
-        os.system("sudo apt-get upgrade")
+        os.system("sudo apt-get upgrade -y")
         print(Fore.LIGHTGREEN_EX)
         input("Operation Complete...")
         os.system("clear")
@@ -100,32 +91,31 @@ while True:
         os.system("clear")
 
     elif user == '6':
-        os.system("sudo apt-get install --fix-missing")
+        os.system("sudo apt-get install --fix-missing -y")
         print(Fore.LIGHTGREEN_EX)
         input("Operation Complete...")
         os.system("clear")
 
     elif user == '7':
         os.system("clear")
+        print(banner)
         print(Fore.LIGHTGREEN_EX)
-        print("Updater is a easy Linux apt downloader\n")
-        print("Created by Melih Can\n")
-        print("08/09/2021\n")
-        print("Gnu General Public License 3.0\n")
-        print("Version 1.0\n")
+        print("Updater is a easy Linux apt downloader")
+        print("-"*40)
+        print("Created by Melih Can")
+        print("08/09/2021")
+        print("Version 1.0")
+        print("-"*40)
         print("E-mail: Melihcan1376@gmail.com")
         input()
         os.system("clear")
 
     elif user == '8':
-        time.sleep(1)
-        print("Reloading...")
         os.system("clear")
         break
 
     else:
         print(Fore.LIGHTRED_EX)
         print("Error! Your Select Operation Not Found...")
-        print("Reloading...")
-        time.sleep(3)
+        input()
         os.system("clear")
