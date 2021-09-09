@@ -5,9 +5,8 @@
 # Gnu General Public License 3.0
 # Version 1.0
 
-from colorama import Fore, Back, Style
+from colorama import Fore
 from datetime import datetime
-import colorama
 import os
 import sys
 import pyfiglet
